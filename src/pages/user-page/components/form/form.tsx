@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { IUser } from '@/types/users.types';
+import { IUserProfile } from '@/types/users.types';
 import { FormItem } from '../form-item';
 import { Modal } from '@/components/common';
 import { Success } from '../success';
 import styles from './form.module.scss';
 
 type Props = {
-  data: IUser;
+  data: IUserProfile;
 };
 
 const Form = ({ data }: Props) => {

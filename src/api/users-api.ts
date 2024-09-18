@@ -1,10 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IUserResponse, IUser } from '@/types/users.types';
+import { IUserResponse, IUser, IUserProfile } from '@/types/users.types';
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com/';
 
 export const usersApi = createApi({
   reducerPath: 'usersApi',
+
+  tagTypes: ['Users'],
 
   baseQuery: fetchBaseQuery({
     baseUrl: BASE_URL,
@@ -16,13 +18,22 @@ export const usersApi = createApi({
 
       transformResponse: (response: IUserResponse[]) =>
         response.map(user => ({
-          ...user,
+          id: user.id,
+          username: user.username,
           address: user.address.city,
           company: user.company.name,
         })),
+
+      providesTags: result =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: 'Users' as const, id })),
+              { type: 'Users', id: 'LIST' },
+            ]
+          : [{ type: 'Users', id: 'LIST' }],
     }),
 
-    getUserById: builder.query<IUser, number>({
+    getUserById: builder.query<IUserProfile, number>({
       query: id => `users/${id}`,
 
       transformResponse: (response: IUserResponse) => ({

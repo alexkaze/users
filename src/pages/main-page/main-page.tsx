@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useAppDispatch } from '@/store/redux-hooks';
+import { useAppDispatch, useAppSelector } from '@/store/redux-hooks';
 import { useGetUsersQuery } from '@/api/users-api';
 import { setUsers } from '@/store/users-slice';
 import { ActiveUsers, ArchivedUsers } from '@/pages/main-page/components/users';
@@ -7,14 +7,17 @@ import { FetchStatus } from '@/components/ui';
 import styles from './main-page.module.scss';
 
 const MainPage = () => {
+  const { users } = useAppSelector(state => state.users);
   const { data: fetchedUsers = [], isLoading, error } = useGetUsersQuery();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (fetchedUsers.length > 0) {
+    if (fetchedUsers.length > 0 && users.length === 0) {
       dispatch(setUsers(fetchedUsers));
     }
-  }, [fetchedUsers, dispatch]);
+  }, [fetchedUsers, dispatch, users]);
+
+  console.log(users);
 
   if (isLoading)
     return <FetchStatus loader={true}>Получение данных</FetchStatus>;
