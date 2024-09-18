@@ -1,0 +1,59 @@
+// Font
+$font-family: 'Manrope', sans-serif;
+$font-family-logo: 'Inter', sans-serif;
+
+$font-html: 10px;
+$font-size-main: 1.6rem;
+$font-size-main-m: 1.4rem;
+$font-size-logo: 2.4rem;
+$font-size-h2: 2.4rem;
+$font-size-h3: 2rem;
+$font-size-username: 2rem;
+$font-size-username-m: 1.8rem;
+$font-size-company-m: 1.4rem;
+$font-size-address: 1.4rem;
+$font-size-label: 1.8rem;
+
+// Weight
+$font-weight: (
+  'medium': 500,
+  'semiBold': 600,
+);
+
+@function weight($weight) {
+  @return map-get($font-weight, $weight);
+}
+
+$font-weight-logo: (
+  'regular': 400,
+  'bold': 700,
+);
+
+@function weight-logo($weight) {
+  @return map-get($font-weight-logo, $weight);
+}
+
+// Color
+$color-1: #9c9c9c;
+$color-2: #dadada;
+$color-3: #595959;
+$color-4: #5a5a5a;
+$color-5: #161616;
+$color-6: #fdfdfd;
+$color-7: #f4f4f4;
+$color-accent: #22a0bc;
+$color-error: #bc2222;
+$color-backdrop: #16161642;
+
+// Font Color
+$font-color-logo: #333153;
+
+// Radius
+$border-radius-container: 1.6rem;
+$border-radius-img: 0.8rem;
+$border-radius-form-item: 5rem;
+
+// Media
+$breakpoint-l: 1100px;
+$breakpoint-md: 760px;
+$breakpoint-sm: 520px;

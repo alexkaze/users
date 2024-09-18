@@ -1,0 +1,16 @@
+@import '@/scss/variables';
+
+.page {
+  display: grid;
+  grid-template: 1fr / 36rem minmax(46rem, 1fr);
+  gap: 4rem;
+}
+
+.aside {
+  height: 100%;
+  padding: 4rem;
+}
+
+.info {
+  padding: 4rem;
+}

@@ -1,0 +1,97 @@
+@import '@/scss/variables';
+@import '@/scss/mixins';
+
+.page {
+  min-height: 100vh;
+}
+
+.container {
+  height: 100%;
+  max-width: 122rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &__text {
+    font-family: $font-family-logo;
+    font-size: $font-size-logo;
+    font-weight: weight-logo(regular);
+    color: $font-color-logo;
+
+    &--bold {
+      font-weight: weight-logo(bold);
+    }
+  }
+}
+
+.header {
+  background-color: $color-6;
+
+  &__user {
+    display: flex;
+  }
+
+  &__user-icons {
+    display: flex;
+    gap: 1.3rem;
+  }
+  //
+  &__user-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__user-info {
+    margin-left: 1.5rem;
+    display: flex;
+    gap: 0.9rem;
+  }
+
+  &__user-img {
+    margin-left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+  }
+}
+
+.header-content {
+  height: 5.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Media
+@include tablet() {
+  .container {
+    padding: 0 1.6rem;
+  }
+}
+
+@include tablet() {
+  .container {
+    padding: 0 1.6rem;
+  }
+
+  .header {
+    &__user-icons {
+      display: none;
+    }
+
+    &__user-name {
+      display: none;
+    }
+
+    &__user-img {
+      width: 2.8rem;
+      height: 2.8rem;
+    }
+  }
+}

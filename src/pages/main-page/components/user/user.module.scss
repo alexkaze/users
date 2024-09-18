@@ -1,0 +1,71 @@
+@import '@/scss/variables';
+@import '@/scss/mixins';
+
+.user {
+  display: flex;
+  gap: 2rem;
+  padding: 2.4rem;
+  position: relative;
+
+  &__img {
+    min-width: 11.2rem;
+    height: 12rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  &__username {
+    font-size: $font-size-username;
+    font-weight: weight(semiBold);
+    color: $color-accent;
+  }
+
+  &__company {
+    color: $color-3;
+  }
+
+  &__address {
+    font-size: $font-size-address;
+    color: $color-1;
+    margin-top: auto;
+  }
+}
+
+// Media
+@include tablet() {
+  .user {
+    flex-direction: column;
+    padding: 1.6rem;
+
+    &__img {
+      width: 13rem;
+      min-height: 12rem;
+      // margin: 0 auto;
+    }
+
+    &__info {
+      // margin: 0 auto;
+    }
+  }
+}
+
+@include mobile() {
+  .user {
+    gap: 1.6rem;
+    height: 24.2rem;
+
+    &__username {
+      font-size: $font-size-username-m;
+    }
+
+    &__company {
+      font-size: $font-size-company-m;
+      font-weight: weight(semiBold);
+    }
+  }
+}

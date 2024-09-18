@@ -1,0 +1,9 @@
+@import '@/scss/mixins';
+
+.users {
+  padding-top: 4rem;
+
+  @include mobile() {
+    padding-top: 3rem;
+  }
+}

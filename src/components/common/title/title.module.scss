@@ -1,0 +1,9 @@
+@import '@/scss/variables';
+
+.title {
+  height: 5rem;
+  font-size: $font-size-h2;
+  font-weight: weight(semiBold);
+  color: $color-5;
+  border-bottom: 0.1rem solid $color-2;
+}

@@ -1,0 +1,32 @@
+@import '@/scss/variables';
+@import '@/scss/extends';
+
+.container {
+  @extend %flex-center;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  width: 31rem;
+  height: 21rem;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 1000;
+}
+
+.title {
+  font-size: $font-size-h3;
+  font-weight: weight(semiBold);
+  color: $color-3;
+}
+
+.cross {
+  @extend %flex-center;
+  cursor: pointer;
+
+  position: absolute;
+  top: 9%;
+  right: 6%;
+}
