@@ -3,6 +3,7 @@
 
 .page {
   min-height: 100vh;
+  min-width: 37.5rem;
 }
 
 .container {
@@ -69,13 +70,7 @@
 }
 
 // Media
-@include tablet() {
-  .container {
-    padding: 0 1.6rem;
-  }
-}
-
-@include tablet() {
+@include mobile() {
   .container {
     padding: 0 1.6rem;
   }
@@ -93,5 +88,9 @@
       width: 2.8rem;
       height: 2.8rem;
     }
+  }
+
+  .header-content {
+    height: 5rem;
   }
 }

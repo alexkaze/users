@@ -1,10 +1,12 @@
 @import '@/scss/variables';
 @import '@/scss/extends';
+@import '@/scss/mixins';
 
 .navback {
   display: flex;
   gap: 1.6rem;
   padding: 2.1rem 0 4.5rem 0;
+  width: fit-content;
   cursor: pointer;
 
   &:hover {
@@ -23,7 +25,19 @@
 }
 
 .title {
-  font-size: $font-size-h3;
+  font-size: $font-size-navback;
   font-weight: weight(semiBold);
   color: $color-3;
+}
+
+// Media
+@include mobile() {
+  .navback {
+    padding: 1.4rem 0 3rem 0;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: $font-size-navback--m;
+  }
 }

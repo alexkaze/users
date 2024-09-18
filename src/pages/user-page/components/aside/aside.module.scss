@@ -1,4 +1,5 @@
 @import '@/scss/variables';
+@import '@/scss/mixins';
 
 .img {
   width: 100%;
@@ -29,5 +30,27 @@
     :hover {
       color: $color-5;
     }
+  }
+}
+
+// Media
+@include tablet {
+  .img {
+    height: 22rem;
+  }
+}
+
+@include mobile {
+  .img {
+    height: 18.7rem;
+  }
+
+  .categoris {
+    gap: 2rem;
+    padding-top: 2.4rem;
+  }
+
+  .category {
+    height: 2.7rem;
   }
 }

@@ -13,12 +13,9 @@
     justify-content: center;
   }
 
-  @include tablet() {
+  @include mobile() {
     grid-template-columns: repeat(2, 16.2rem);
     gap: 2rem;
-  }
-
-  @include mobile() {
     padding: 1.6rem 0 3rem 0;
   }
 }

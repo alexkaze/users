@@ -1,5 +1,6 @@
 @import '@/scss/variables';
 @import '@/scss/extends';
+@import '@/scss/mixins';
 
 .container {
   @extend %flex-center;
@@ -17,7 +18,7 @@
 }
 
 .title {
-  font-size: $font-size-h3;
+  font-size: $font-size-success;
   font-weight: weight(semiBold);
   color: $color-3;
 }
@@ -29,4 +30,16 @@
   position: absolute;
   top: 9%;
   right: 6%;
+}
+
+// Media
+@include mobile() {
+  .container {
+    width: 27rem;
+    height: 19rem;
+  }
+
+  .title {
+    font-size: $font-size-success--m;
+  }
 }

@@ -13,7 +13,7 @@ body {
   background-color: $color-7;
 
   @include mobile() {
-    font-size: $font-size-main-m;
+    font-size: $font-size-main--m;
   }
 }
 

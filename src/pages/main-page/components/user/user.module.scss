@@ -36,35 +36,47 @@
   }
 }
 
+.archived {
+  & .user__img {
+    filter: grayscale(100%);
+  }
+
+  & .user__username {
+    color: $color-3;
+  }
+
+  & .user__company {
+    color: $color-1;
+  }
+
+  & .user__address {
+    color: $color-2;
+  }
+}
+
 // Media
-@include tablet() {
+@include mobile() {
   .user {
     flex-direction: column;
+    gap: 1.6rem;
+    height: 24.2rem;
     padding: 1.6rem;
 
     &__img {
       width: 13rem;
       min-height: 12rem;
-      // margin: 0 auto;
     }
 
     &__info {
-      // margin: 0 auto;
+      height: 100%;
     }
-  }
-}
-
-@include mobile() {
-  .user {
-    gap: 1.6rem;
-    height: 24.2rem;
 
     &__username {
-      font-size: $font-size-username-m;
+      font-size: $font-size-username--m;
     }
 
     &__company {
-      font-size: $font-size-company-m;
+      font-size: $font-size-company--m;
       font-weight: weight(semiBold);
     }
   }

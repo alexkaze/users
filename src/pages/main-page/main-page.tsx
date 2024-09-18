@@ -3,6 +3,7 @@ import { useAppDispatch } from '@/store/redux-hooks';
 import { useGetUsersQuery } from '@/api/users-api';
 import { setUsers } from '@/store/users-slice';
 import { ActiveUsers, ArchivedUsers } from '@/pages/main-page/components/users';
+import { FetchStatus } from '@/components/ui';
 import styles from './main-page.module.scss';
 
 const MainPage = () => {
@@ -15,8 +16,10 @@ const MainPage = () => {
     }
   }, [fetchedUsers, dispatch]);
 
-  if (isLoading) return <h2>Loading...</h2>;
-  if (error) return <h2>Fetching failed!</h2>;
+  if (isLoading)
+    return <FetchStatus loader={true}>Получение данных</FetchStatus>;
+
+  if (error) return <FetchStatus>Не удалось получить данные!</FetchStatus>;
 
   return (
     <div className={styles.users}>

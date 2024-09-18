@@ -12,15 +12,21 @@ type Props = {
 };
 
 const User = ({ id, username, address, company, archived }: Props) => {
+  const userStyle = archived
+    ? `${styles.user} ${styles.archived}`
+    : styles.user;
+
+  const formatText = (text: string) => text.split(/[\s_-]/)[0];
+
   return (
     <RoundedContainer>
-      <li className={styles.user}>
+      <li className={userStyle}>
         <UserImage className={styles['user__img']} />
 
         <div className={styles['user__info']}>
-          <div className={styles['user__username']}>{username}</div>
-          <div className={styles['user__company']}>{company}</div>
-          <div className={styles['user__address']}>{address}</div>
+          <div className={styles['user__username']}>{formatText(username)}</div>
+          <div className={styles['user__company']}>{formatText(company)}</div>
+          <div className={styles['user__address']}>{formatText(address)}</div>
         </div>
 
         <Options id={id} archived={archived} />

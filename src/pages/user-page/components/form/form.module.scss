@@ -1,4 +1,5 @@
 @import '@/scss/variables';
+@import '@/scss/mixins';
 
 .form {
   display: flex;
@@ -10,11 +11,14 @@
 
 .btn-wrapper {
   padding-top: 1rem;
+  width: 100%;
+  max-width: 17rem;
 }
 
 .btn {
-  padding: 1.2rem 4.2rem;
-  width: 17rem;
+  display: block;
+  width: 100%;
+  padding: 1.2rem 0;
 
   font: inherit;
   font-weight: weight(semiBold);
@@ -27,5 +31,24 @@
   &:hover {
     color: $color-3;
     background-color: $color-7;
+  }
+}
+
+// Media
+@include tablet() {
+  .btn-wrapper {
+    max-width: 28.7rem;
+    margin: 0 auto;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 28.7rem;
+  }
+}
+
+@include mobile() {
+  .form {
+    gap: 2rem;
   }
 }

@@ -1,5 +1,6 @@
 @import '@/scss/variables';
 @import '@/scss/extends';
+@import '@/scss/mixins';
 
 .options {
   @extend %flex-center;
@@ -40,10 +41,26 @@
 }
 
 .option {
-  padding: 0.8rem 1.2rem;
+  padding: 0.78rem 1.2rem;
   cursor: pointer;
 
   &:hover {
     color: $color-accent;
+  }
+}
+
+// Media
+@include mobile() {
+  .options {
+    width: 0.3rem;
+    bottom: -18%;
+    right: 7%;
+  }
+
+  .dropdown {
+    height: fit-content;
+    width: 16rem;
+    top: 72%;
+    left: 0;
   }
 }

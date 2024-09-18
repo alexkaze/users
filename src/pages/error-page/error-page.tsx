@@ -1,12 +1,16 @@
+import styles from './error.module.scss';
+
 const ErrorPage = () => {
   return (
-    <div>
-      <h1>Oops!</h1>
-      <h2>404. Page not found</h2>
-      <p>
-        It may have been moved, or you simply entered the page address
-        incorrectly.
-      </p>
+    <div className={styles.error}>
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>Упс!</h1>
+        <h2 className={styles.subtitle}>404. Страница не найдена</h2>
+        <p className={styles.text}>
+          Вероятно, страница была перенесена или вы ввели некорректный адрес
+          страницы.
+        </p>
+      </div>
     </div>
   );
 };

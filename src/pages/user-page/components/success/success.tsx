@@ -14,7 +14,7 @@ const Success = ({ onHideModal }: Props) => {
       </div>
 
       <SuccessIcon />
-      <h3 className={styles.title}>Изменения сохранены!</h3>
+      <div className={styles.title}>Изменения сохранены!</div>
     </RoundedContainer>
   );
 };

@@ -3,16 +3,22 @@ $font-family: 'Manrope', sans-serif;
 $font-family-logo: 'Inter', sans-serif;
 
 $font-html: 10px;
-$font-size-main: 1.6rem;
-$font-size-main-m: 1.4rem;
-$font-size-logo: 2.4rem;
+$font-size-h1: 3rem;
 $font-size-h2: 2.4rem;
-$font-size-h3: 2rem;
+$font-size-h2--m: 2rem;
+$font-size-main: 1.6rem;
+$font-size-main--m: 1.4rem;
+$font-size-logo: 2.4rem;
+$font-size-navback: 2rem;
+$font-size-navback--m: 1.6rem;
+$font-size-success: 2rem;
+$font-size-success--m: 1.8rem;
 $font-size-username: 2rem;
-$font-size-username-m: 1.8rem;
-$font-size-company-m: 1.4rem;
+$font-size-username--m: 1.8rem;
+$font-size-company--m: 1.4rem;
 $font-size-address: 1.4rem;
 $font-size-label: 1.8rem;
+$font-size-label--m: 1.6rem;
 
 // Weight
 $font-weight: (
@@ -55,5 +61,5 @@ $border-radius-form-item: 5rem;
 
 // Media
 $breakpoint-l: 1100px;
-$breakpoint-md: 760px;
-$breakpoint-sm: 520px;
+$breakpoint-tb: 930px;
+$breakpoint-sm: 760px;
